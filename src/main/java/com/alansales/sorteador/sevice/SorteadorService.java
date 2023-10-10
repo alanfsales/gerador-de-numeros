@@ -28,7 +28,8 @@ public class SorteadorService {
 
             return lista;
         }else {
-            throw new NumeroForaDoLimiteException("Número fora do Limte. Use um número de 1 a 100.");
+            throw new NumeroForaDoLimiteException(quantidade + " é um número fora do Limte suportado. " +
+                    "Use um número de 1 a 100.");
         }
     }
 

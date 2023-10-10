@@ -1,5 +1,7 @@
 package com.alansales.sorteador.trataexception;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.time.LocalDateTime;
 
 public class Erro {
@@ -8,6 +10,11 @@ public class Erro {
     private String mensagem;
 
     public Erro(LocalDateTime dataHora, String mensagem) {
+        this.dataHora = dataHora;
+        this.mensagem = mensagem;
+    }
+
+    public Erro(LocalDateTime dataHora, String mensagem, Integer status) {
         this.dataHora = dataHora;
         this.mensagem = mensagem;
     }
@@ -27,4 +34,5 @@ public class Erro {
     public void setMensagem(String mensagem) {
         this.mensagem = mensagem;
     }
+
 }
