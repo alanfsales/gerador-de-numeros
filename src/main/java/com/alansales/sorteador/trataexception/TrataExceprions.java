@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
+import org.springframework.web.servlet.NoHandlerFoundException;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import java.time.LocalDateTime;
@@ -17,7 +18,7 @@ import java.time.LocalDateTime;
 public class TrataExceprions extends ResponseEntityExceptionHandler{
 
     @ExceptionHandler(NumeroForaDoLimiteException.class)
-    public ResponseEntity<?> tratarNumeroForaDoLimiteException(
+    public ResponseEntity<?> tratarNumeroForaDoLimite(
             NumeroForaDoLimiteException ex, WebRequest request){
 
         return handleExceptionInternal(ex, ex.getMessage(), new HttpHeaders(),
@@ -25,13 +26,26 @@ public class TrataExceprions extends ResponseEntityExceptionHandler{
     }
 
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
-    public ResponseEntity<?> trataMethodArgumentTypeMismatchException(
+    public ResponseEntity<?> trataMethodArgumentTypeMismatch(
             MethodArgumentTypeMismatchException ex, WebRequest request){
 
-        String mensagem = "Parametro inválido. Use um numero de 1 a 100.";
+        String mensagem = String.format("O parâmetro de url '%s' recebeu o valor '%s' que é um tipo inválido. " +
+                "Informe um valor do tipo %s de 1 a 100.", ex.getName(), ex.getValue(),
+                ex.getRequiredType().getSimpleName());
 
         return handleExceptionInternal(ex, mensagem, new HttpHeaders(),
                 HttpStatus.BAD_REQUEST, request);
+    }
+
+    @Override
+    protected ResponseEntity<Object> handleNoHandlerFoundException(NoHandlerFoundException ex,
+        HttpHeaders headers, HttpStatusCode status, WebRequest request) {
+
+        String mensagem = String.format("O recurso ou url '%s' não existe.", ex.getRequestURL());
+
+        Erro erro = new Erro(LocalDateTime.now(), mensagem);
+
+        return super.handleExceptionInternal(ex, erro, headers, status, request);
     }
 
     @Override
