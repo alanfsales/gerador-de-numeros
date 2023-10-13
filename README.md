@@ -20,7 +20,7 @@
   Ela possui um único endpoint: "/sorteador/{quantidade}", onde {quantidade} representa a quantidade de números que serão gerados.
 </p>
 
->Um exemplo para quem quer jogar na Mega Sena 
+>Um exemplo que retorna 6 números 
 
 <p align="center">
   <img align="center" alt="exemploPostman" src="https://github.com/alanfsales/assets/blob/main/sorteador/exemploPostmam.png">
@@ -48,8 +48,10 @@
 
 ## Próximos passos
 
-- Deploy
 - Criar novos endpoints(Aceito sugestões)
+- Gerar números de 1 a 60 (Ideal para jogar na mega sena)
+- Gerar números de 4 dígitos(milhar)
+- Deploy
 
 
 
