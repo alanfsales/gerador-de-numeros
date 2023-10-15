@@ -14,8 +14,15 @@ public class SorteadorController implements SorteadorControllerSpringDoc {
     @Autowired
     private SorteadorService sorteadorService;
 
-    @GetMapping("/sorteador/{quantidade}")
-    public List<Integer> sortear(@PathVariable int quantidade){
-       return sorteadorService.sortear(quantidade);
+    @GetMapping("/sortear0a99/{quantidade}")
+    public List<Integer> sortear0a99(@PathVariable int quantidade){
+       return sorteadorService.sortear0a99(quantidade);
     }
+
+    @GetMapping("/sortear1a60/{quantidade}")
+    public List<Integer> sortear1a60(@PathVariable int quantidade){
+        return sorteadorService.sortear1a60(quantidade);
+    }
+
+
 }

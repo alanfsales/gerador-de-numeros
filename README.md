@@ -14,9 +14,11 @@ Este projeto tem como objetivo aprimorar o meu conhecimento e aprendizado em bac
 
 Esta API gera números aleatórios de 0 a 99. Podendo retornar até 100 números.
 
-Ela possui um único endpoint: "/sorteador/{quantidade}", onde {quantidade} representa a quantidade de números que serão gerados.
+Endpoints:
+- "/sortear0a99/{quantidade}", onde {quantidade} representa a quantidade de números que serão gerados.
+- "/sortear1a66/{quantidade}", onde {quantidade} representa a quantidade de números que serão gerados.
 
->Um exemplo que retorna 6 números 
+>Um exemplo que retorna 5 números de 0 a 99
 
 ![exemploPostman](https://github.com/alanfsales/assets/blob/main/sorteador/exemploPostmam.png)
 
@@ -42,7 +44,7 @@ Utilizando a anotação **@ControllerAdvice** e estendendo a classe **ResponseEn
 ## Próximos passos
 
 - Criar novos endpoints(Aceito sugestões)
-- Gerar números de 1 a 60 (Ideal para jogar na mega sena)
+- [x] Gerar números de 1 a 60 (Ideal para jogar na mega sena)
 - Gerar números de 4 dígitos(milhar)
 - Deploy
 

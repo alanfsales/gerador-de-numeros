@@ -17,4 +17,5 @@ public class SpringDocConfig {
                         .version("V1")
                 );
     }
+
 }
