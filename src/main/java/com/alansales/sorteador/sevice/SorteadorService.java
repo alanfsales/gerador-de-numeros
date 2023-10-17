@@ -54,11 +54,36 @@ public class SorteadorService {
         }
     }
 
+    public List<Integer> sortearMilhar(int quantidade){
+        if (validarNumeroMilhar(quantidade)) {
+            List<Integer> lista = new ArrayList<>();
+            Random gerador = new Random();
+
+            int i = 0;
+            while (i<quantidade){
+                int numero = gerador.nextInt(10000);
+                if (!lista.contains(numero)) {
+                    lista.add(numero);
+                    i++;
+                }
+            }
+
+            return lista;
+        }else {
+            throw new NumeroForaDoLimiteException(quantidade + " é um número fora do Limte suportado. " +
+                    "Use um número de 1 a 10.");
+        }
+    }
+
     private boolean validarNumero0a99(int quantidade){
         return quantidade > 0 && quantidade <= 100;
     }
 
     private boolean validarNumero1a60(int quantidade){
         return quantidade >= 1 && quantidade <= 60;
+    }
+
+    private boolean validarNumeroMilhar(int quantidade){
+        return quantidade >= 1 && quantidade <= 10;
     }
 }

@@ -12,11 +12,14 @@
 
 Este projeto tem como objetivo aprimorar o meu conhecimento e aprendizado em backend, Java e Spring, e também faz parte do meu portfólio.
 
-Esta API gera números aleatórios de 0 a 99. Podendo retornar até 100 números.
+Esta API gera números aleatórios. 
 
 Endpoints:
-- "/sortear0a99/{quantidade}", onde {quantidade} representa a quantidade de números que serão gerados.
-- "/sortear1a66/{quantidade}", onde {quantidade} representa a quantidade de números que serão gerados.
+- /sortear0a99/{quantidade}
+- /sortear1a66/{quantidade}
+- /sortear-milhar/{quantidade}&nbsp;
+
+    *obs: {quantidade} representa a quantidade números a serem geradados.*
 
 >Um exemplo que retorna 5 números de 0 a 99
 
@@ -43,10 +46,10 @@ Utilizando a anotação **@ControllerAdvice** e estendendo a classe **ResponseEn
 
 ## Próximos passos
 
-- Criar novos endpoints(Aceito sugestões)
+- [ ] Criar novos endpoints(Aceito sugestões)
 - [x] Gerar números de 1 a 60 (Ideal para jogar na mega sena)
-- Gerar números de 4 dígitos(milhar)
-- Deploy
+- [x] Gerar números de 4 dígitos(milhar)
+- [ ] Deploy
 
 
 
