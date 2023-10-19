@@ -35,6 +35,9 @@ Utilizando a anotação **@ControllerAdvice** e estendendo a classe **ResponseEn
 
 ![erro3](https://github.com/alanfsales/assets/blob/main/sorteador/exemploErro3.png)
 
+## Deploy (Railway)
+
+- url: https://gerador-de-numeros-production.up.railway.app/
 
 ## Dependências
 
@@ -49,7 +52,7 @@ Utilizando a anotação **@ControllerAdvice** e estendendo a classe **ResponseEn
 - [ ] Criar novos endpoints(Aceito sugestões)
 - [x] Gerar números de 1 a 60 (Ideal para jogar na mega sena)
 - [x] Gerar números de 4 dígitos(milhar)
-- [ ] Deploy
+- [x] Deploy(Railway)
 
 
 
