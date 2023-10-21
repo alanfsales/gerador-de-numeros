@@ -6,6 +6,7 @@ import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.media.Schema;
+import io.swagger.v3.oas.models.servers.Server;
 import io.swagger.v3.oas.models.tags.Tag;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,9 +22,10 @@ public class SpringDocConfig {
     @Bean
     public OpenAPI openAPI(){
         return new OpenAPI()
+                .addServersItem(new Server().url("https://gerador-de-numeros-production.up.railway.app"))
                 .info(new Info()
                         .title("Gerador de números")
-                        .description("Gera números aleatórios")
+                        .description("Gerador de números aleatórios")
                         .version("V1")
                 ).tags(Arrays.asList(
                         new Tag().name("Sorteador").description("Gerencia os geradores de números")
