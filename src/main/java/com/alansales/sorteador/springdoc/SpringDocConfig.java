@@ -22,7 +22,7 @@ public class SpringDocConfig {
     @Bean
     public OpenAPI openAPI(){
         return new OpenAPI()
-                .addServersItem(new Server().url("https://gerador-de-numeros-production.up.railway.app"))
+//                .addServersItem(new Server().url("https://gerador-de-numeros-production.up.railway.app"))
                 .info(new Info()
                         .title("Gerador de números")
                         .description("Gerador de números aleatórios")
