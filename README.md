@@ -16,7 +16,7 @@ Esta API gera números aleatórios.
 
 Endpoints:
 - /sortear0a99/{quantidade}
-- /sortear1a66/{quantidade}
+- /sortear1a60/{quantidade}
 - /sortear-milhar/{quantidade}&nbsp;
 
     *obs: {quantidade} representa a quantidade números a serem geradados.*
